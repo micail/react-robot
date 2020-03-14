@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    "plugin:jest/recommended",
     'airbnb',
   ],
   globals: {
@@ -21,6 +22,5 @@ module.exports = {
   plugins: [
     'react',
   ],
-  rules: {
-  },
+  rules: {},
 };

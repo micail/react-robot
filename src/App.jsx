@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useDispatch, connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -9,8 +9,11 @@ import Panel from './components/Panel/Panel';
 import { createPosition, updatePosition } from './redux/actions/positionActions';
 import './App.css';
 
+// TODO: This component has to be changed for a class component,
+// or actions have to be exported to write tests // for them.
 
 export const App = ({ position }) => {
+  const [message, setReport] = useState(null);
   const dispatch = useDispatch();
 
   const matrix = [
@@ -84,13 +87,24 @@ export const App = ({ position }) => {
     }
   };
 
+  const report = () => {
+    const direction = {
+      N: 'NORTH',
+      E: 'EAST',
+      S: 'SOUTH',
+      W: 'WEST',
+    };
+    setReport(<p>{`${x},${y},${direction[f]}`}</p>);
+  };
+
   return (
     <div className="App">
       <Table matrix={matrix} position={position} />
       <Panel commands={{
-        move, place, left, right,
+        move, place, left, right, report,
       }}
       />
+      {message}
     </div>
   );
 };

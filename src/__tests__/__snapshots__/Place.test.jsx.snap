@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Place component should render place component 1`] = `
+<div
+  className="place"
+>
+  <p>
+    ,
+  </p>
+  <Robot
+    f={null}
+  />
+</div>
+`;

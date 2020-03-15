@@ -7,7 +7,7 @@ import './Table.scss';
 
 const Table = ({ matrix, position }) => (
   <div className="grid-container">
-    {(matrix.map((row, x) => row.map((y) => <Place key={`${x}-${y}`} x={x} y={y} position={position} />))).reverse()}
+    {(matrix.map((row, y) => row.map((x) => <Place key={`${x}-${y}`} x={x} y={y} position={position} />))).reverse()}
   </div>
 );
 

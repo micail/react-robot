@@ -81,13 +81,13 @@ export const App = ({ position }) => {
   const move = () => {
     switch (f) {
       case 'N':
-        return dispatch(updatePosition({ x: increase(x), y, f }));
-      case 'E':
         return dispatch(updatePosition({ x, y: increase(y), f }));
+      case 'E':
+        return dispatch(updatePosition({ x: increase(x), y, f }));
       case 'S':
-        return dispatch(updatePosition({ x: decrease(x), y, f }));
-      case 'W':
         return dispatch(updatePosition({ x, y: decrease(y), f }));
+      case 'W':
+        return dispatch(updatePosition({ x: decrease(x), y, f }));
       default:
         return dispatch(updatePosition({ x, y, f }));
     }

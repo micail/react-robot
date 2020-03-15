@@ -1,4 +1,4 @@
-import makeStore from '../store';
+import makeStore from '../redux/store';
 
 describe('Store tests', () => {
   const store = makeStore();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Robot from '../components/Robot/Robot';
+import Robot from '../../components/Robot/Robot';
 
 describe('Robot component', () => {
   it('should render robot component', () => {

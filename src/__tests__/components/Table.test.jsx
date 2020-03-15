@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Table from '../components/Table/Table';
+import Table from '../../components/Table/Table';
 
 describe('Table component', () => {
   it('should render table component', () => {

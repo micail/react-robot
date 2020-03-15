@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Panel from '../components/Panel/Panel';
+import Panel from '../../components/Panel/Panel';
 
 describe('Panel component', () => {
   let component;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Place from '../components/Place/Place';
+import Place from '../../components/Place/Place';
 
 describe('Place component', () => {
   it('should render place component', () => {

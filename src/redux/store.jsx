@@ -1,8 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 const makeStore = () => {
-  createStore(combineReducers({
-
+  return createStore(combineReducers({
   }));
 };
 

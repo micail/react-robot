@@ -14,7 +14,6 @@ const Panel = ({ commands }) => {
         <Button name="right" func={commands.right} />
       </div>
       <Button name="report" func={commands.report} />
-      <Button name="place" func={commands.place} />
     </div>
   );
 };

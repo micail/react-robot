@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch, connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 
 import Table from './components/Table/Table';
 import Panel from './components/Panel/Panel';
+import Input from './components/Input/Input';
 
 import { createPosition, updatePosition } from './redux/actions/positionActions';
 import './App.css';
@@ -26,7 +27,12 @@ export const App = ({ position }) => {
   const { y } = position;
   const { f } = position;
 
-  const place = () => dispatch(createPosition({ x: 0, y: 0, f: 'N' }));
+  const place = (x, y, f) => {
+    console.log('x', x)
+    console.log('y', y)
+    console.log('f', f)
+    return dispatch(createPosition({ x, y, f }));
+  };
 
   const right = () => {
     switch (f) {
@@ -101,10 +107,11 @@ export const App = ({ position }) => {
     <div className="App">
       <Table matrix={matrix} position={position} />
       <Panel commands={{
-        move, place, left, right, report,
+        move, left, right, report,
       }}
       />
       {message}
+      <Input func={place} />
     </div>
   );
 };

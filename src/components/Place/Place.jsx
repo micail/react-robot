@@ -8,11 +8,6 @@ const Place = ({ x, y, position }) => {
 
   return (
     <div className="place">
-      <p>
-        {x}
-        ,
-        {y}
-      </p>
       {robotRender}
     </div>
   );

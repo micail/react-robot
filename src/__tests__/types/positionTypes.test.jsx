@@ -5,10 +5,6 @@ describe('Add position types', () => {
     const expected = 'CREATE_POSITION';
     expect(positionTypes.CREATE_POSITION).toEqual(expected);
   });
-  it('Should read a position', () => {
-    const expected = 'READ_POSITION';
-    expect(positionTypes.READ_POSITION).toEqual(expected);
-  });
   it('Should update a position', () => {
     const expected = 'UPDATE_POSITION';
     expect(positionTypes.UPDATE_POSITION).toEqual(expected);

@@ -7,7 +7,7 @@ import Place from './Place';
 
 const Table = ({ matrix }) => (
   <div className="grid-container">
-    {(matrix.map((row, x) => row.map((y) => <Place key={x + y} x={x} y={y} />))).reverse()}
+    {(matrix.map((row, x) => row.map((y) => <Place key={`${x}-${y}`} x={x} y={y} />))).reverse()}
   </div>
 );
 

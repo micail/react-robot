@@ -1,0 +1,35 @@
+#robot {
+
+  /* facing north */
+  &.N {
+    .fa-robot {
+      /* doesn't work in IE/ early Edge */
+      transform: rotate(0deg);
+    }
+
+  }
+
+  /* facing east */
+  &.E {
+    .fa-robot {
+      /* doesn't work in IE/ early Edge */
+      transform: rotate(90deg);
+    }
+  }
+
+  /* facing south */
+  &.S {
+    .fa-robot {
+      /* doesn't work in IE/ early Edge */
+      transform: rotate(180deg);
+    }
+  }
+
+  /* facing west */
+  &.W {
+    .fa-robot {
+      /* doesn't work in IE/ early Edge */
+      transform: rotate(270deg);
+    }
+  }
+}

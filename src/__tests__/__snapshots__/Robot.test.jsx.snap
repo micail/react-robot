@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Robot component should render robot component 1`] = `
+<div
+  className="N"
+  id="robot"
+>
+  <ForwardRef(SvgRobotSolid) />
+</div>
+`;

@@ -4,6 +4,7 @@ exports[`Panel component should render move button 1`] = `
 <button
   className="btn"
   id="btn-move"
+  onClick={[Function]}
   type="button"
 >
   MOVE
@@ -12,10 +13,11 @@ exports[`Panel component should render move button 1`] = `
 
 exports[`Panel component should render panel component 1`] = `
 <Panel
-  command={
+  commands={
     Object {
       "left": [Function],
       "move": [Function],
+      "place": [Function],
       "report": [Function],
       "right": [Function],
     }
@@ -25,11 +27,13 @@ exports[`Panel component should render panel component 1`] = `
     className="panel"
   >
     <Button
-      move={[Function]}
+      func={[Function]}
+      name="move"
     >
       <button
         className="btn"
         id="btn-move"
+        onClick={[Function]}
         type="button"
       >
         MOVE
@@ -37,22 +41,26 @@ exports[`Panel component should render panel component 1`] = `
     </Button>
     <div>
       <Button
-        left={[Function]}
+        func={[Function]}
+        name="left"
       >
         <button
           className="btn"
           id="btn-left"
+          onClick={[Function]}
           type="button"
         >
           LEFT
         </button>
       </Button>
       <Button
-        right={[Function]}
+        func={[Function]}
+        name="right"
       >
         <button
           className="btn"
           id="btn-right"
+          onClick={[Function]}
           type="button"
         >
           RIGHT
@@ -60,14 +68,29 @@ exports[`Panel component should render panel component 1`] = `
       </Button>
     </div>
     <Button
-      report={[Function]}
+      func={[Function]}
+      name="report"
     >
       <button
         className="btn"
         id="btn-report"
+        onClick={[Function]}
         type="button"
       >
         REPORT
+      </button>
+    </Button>
+    <Button
+      func={[Function]}
+      name="place"
+    >
+      <button
+        className="btn"
+        id="btn-place"
+        onClick={[Function]}
+        type="button"
+      >
+        PLACE
       </button>
     </Button>
   </div>

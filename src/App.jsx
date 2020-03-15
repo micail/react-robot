@@ -1,26 +1,122 @@
 import React from 'react';
+import { useDispatch, connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+
 import Table from './components/Table/Table';
 import Panel from './components/Panel/Panel';
 
+import { createPosition, updatePosition } from './redux/actions/positionActions';
 import './App.css';
 
-function App() {
+
+export const App = ({ position }) => {
+  const dispatch = useDispatch();
+
   const matrix = [
     [0, 1, 2, 3, 4], [0, 1, 2, 3, 4],
     [0, 1, 2, 3, 4], [0, 1, 2, 3, 4],
     [0, 1, 2, 3, 4],
   ];
 
+  const { x } = position;
+  const { y } = position;
+  const { f } = position;
+
+  const place = () => dispatch(createPosition({ x: 0, y: 0, f: 'N' }));
+
+  const right = () => {
+    switch (f) {
+      case 'N':
+        return dispatch(updatePosition({ x, y, f: 'E' }));
+      case 'E':
+        return dispatch(updatePosition({ x, y, f: 'S' }));
+      case 'S':
+        return dispatch(updatePosition({ x, y, f: 'W' }));
+      case 'W':
+        return dispatch(updatePosition({ x, y, f: 'N' }));
+      default:
+        return dispatch(updatePosition({ x, y, f }));
+    }
+  };
+
+  const left = () => {
+    switch (f) {
+      case 'N':
+        return dispatch(updatePosition({ x, y, f: 'W' }));
+      case 'W':
+        return dispatch(updatePosition({ x, y, f: 'S' }));
+      case 'S':
+        return dispatch(updatePosition({ x, y, f: 'E' }));
+      case 'E':
+        return dispatch(updatePosition({ x, y, f: 'N' }));
+      default:
+        return dispatch(updatePosition({ x, y, f }));
+    }
+  };
+
+  const increase = (p) => {
+    if (p === 4) {
+      return p;
+    }
+    return p + 1;
+  };
+
+  const decrease = (p) => {
+    if (p === 0) {
+      return p;
+    }
+    return p - 1;
+  };
+
   const move = () => {
-    console.log('Moved');
+    switch (f) {
+      case 'N':
+        return dispatch(updatePosition({ x: increase(x), y, f }));
+      case 'E':
+        return dispatch(updatePosition({ x, y: increase(y), f }));
+      case 'S':
+        return dispatch(updatePosition({ x: decrease(x), y, f }));
+      case 'W':
+        return dispatch(updatePosition({ x, y: decrease(y), f }));
+      default:
+        return dispatch(updatePosition({ x, y, f }));
+    }
   };
 
   return (
     <div className="App">
-      <Table matrix={matrix} />
-      <Panel commands={move} />
+      <Table matrix={matrix} position={position} />
+      <Panel commands={{
+        move, place, left, right,
+      }}
+      />
     </div>
   );
-}
+};
 
-export default App;
+const position = {
+  x: PropTypes.number,
+  y: PropTypes.number,
+  f: PropTypes.string,
+};
+
+App.propTypes = {
+  y: PropTypes.number,
+  x: PropTypes.number,
+  position: PropTypes.shape(position),
+};
+
+App.defaultProps = {
+  x: null,
+  y: null,
+  position: {
+    x: null,
+    y: null,
+    f: null,
+  },
+};
+
+export const mapStateToProps = (state) => ({ position: state.positionReducer });
+
+export default connect(mapStateToProps)(App);

@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from './Button';
+import Button from '../Button/Button';
 
 import './Panel.scss';
 
-const Panel = ({ command }) => {
+const Panel = ({ commands }) => {
   return (
     <div className="panel">
-      <Button move={command.move} />
+      <Button name="move" func={commands.move} />
       <div>
-        <Button left={command.left} />
-        <Button right={command.right} />
+        <Button name="left" func={commands.left} />
+        <Button name="right" func={commands.right} />
       </div>
-      <Button report={command.report} />
+      <Button name="report" func={commands.report} />
+      <Button name="place" func={commands.place} />
     </div>
   );
 };
@@ -21,14 +22,15 @@ const Panel = ({ command }) => {
 export default Panel;
 
 Panel.propTypes = {
-  command: PropTypes.objectOf(PropTypes.func),
+  commands: PropTypes.objectOf(PropTypes.func),
 };
 
 Panel.defaultProps = {
-  command: {
+  commands: {
     move: () => { },
     left: () => { },
     right: () => { },
     report: () => { },
+    place: () => { },
   },
 };

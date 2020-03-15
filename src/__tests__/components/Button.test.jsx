@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button from '../../components/Panel/Button';
+import Button from '../../components/Button/Button';
 
 describe('Button component', () => {
   let component;

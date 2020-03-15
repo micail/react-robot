@@ -4,6 +4,7 @@ exports[`Button component should render button component 1`] = `
 <button
   className="btn"
   id="btn-"
+  onClick={null}
   type="button"
 />
 `;

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Place from '../Place/Place';
 import './Table.scss';
 
-import Place from '../Place/Place';
 
-const Table = ({ matrix }) => (
+const Table = ({ matrix, position }) => (
   <div className="grid-container">
-    {(matrix.map((row, x) => row.map((y) => <Place key={`${x}-${y}`} x={x} y={y} />))).reverse()}
+    {(matrix.map((row, x) => row.map((y) => <Place key={`${x}-${y}`} x={x} y={y} position={position} />))).reverse()}
   </div>
 );
 

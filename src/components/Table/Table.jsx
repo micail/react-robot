@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Table.scss';
 
-import Place from './Place';
+import Place from '../Place/Place';
 
 const Table = ({ matrix }) => (
   <div className="grid-container">

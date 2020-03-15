@@ -94,13 +94,16 @@ export const App = ({ position }) => {
   };
 
   const report = () => {
-    const direction = {
-      N: 'NORTH',
-      E: 'EAST',
-      S: 'SOUTH',
-      W: 'WEST',
-    };
-    setReport(<p>{`${x},${y},${direction[f]}`}</p>);
+    if (f) {
+      const direction = {
+        N: 'NORTH',
+        E: 'EAST',
+        S: 'SOUTH',
+        W: 'WEST',
+      };
+      return setReport(<p>{`${x},${y},${direction[f]}`}</p>);
+    }
+    return null;
   };
 
   return (

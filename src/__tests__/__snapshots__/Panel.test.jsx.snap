@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel component should render move button 1`] = `
+<button
+  className="btn"
+  id="btn-move"
+  type="button"
+>
+  MOVE
+</button>
+`;
+
+exports[`Panel component should render panel component 1`] = `
+<Panel
+  command={
+    Object {
+      "left": [Function],
+      "move": [Function],
+      "report": [Function],
+      "right": [Function],
+    }
+  }
+>
+  <div
+    className="panel"
+  >
+    <Button
+      move={[Function]}
+    >
+      <button
+        className="btn"
+        id="btn-move"
+        type="button"
+      >
+        MOVE
+      </button>
+    </Button>
+    <div>
+      <Button
+        left={[Function]}
+      >
+        <button
+          className="btn"
+          id="btn-left"
+          type="button"
+        >
+          LEFT
+        </button>
+      </Button>
+      <Button
+        right={[Function]}
+      >
+        <button
+          className="btn"
+          id="btn-right"
+          type="button"
+        >
+          RIGHT
+        </button>
+      </Button>
+    </div>
+    <Button
+      report={[Function]}
+    >
+      <button
+        className="btn"
+        id="btn-report"
+        type="button"
+      >
+        REPORT
+      </button>
+    </Button>
+  </div>
+</Panel>
+`;

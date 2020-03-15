@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component should render button component 1`] = `
+<button
+  className="btn"
+  id="btn-"
+  type="button"
+/>
+`;
